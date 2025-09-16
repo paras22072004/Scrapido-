@@ -1,0 +1,156 @@
+/* Container */
+.dashboard-containeruserdash {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Small Sidebar */
+.sidebaruser.smalldash {
+  width: 50px; /* small width */
+  background-color: white;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  position: fixed;
+  height: 100vh;
+  overflow: visible; 
+}
+
+.sidebaruser.smalldash ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebaruser.smalldash ul li {
+  margin: 25px 0;
+  font-size: 1.0rem;
+
+}
+
+.sidebaruser.smalldash ul li a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.sidebaruser.smalldash ul li a:hover {
+  color: #1abc9c;
+}
+
+/* Main Content */
+.main-contentuserdash {
+  flex: 1;
+  padding: 20px 30px;
+  background-color: #f9f9f9;
+   margin-left: 70px;
+}
+
+/* Header */
+.main-contentuserdash h1 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Stats Row */
+.stats-rowuserdash {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.stat-carduserdash {
+  flex: 1 1 200px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.stat-carduserdash h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.stat-valuedash {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.stat-change.positive {
+  color: #27ae60;
+  font-weight: 500;
+}
+
+.stat-change.negative {
+  color: #c0392b;
+  font-weight: 500;
+}
+
+/* Quick Summary Card */
+.stat-carduserdash + .stat-carduserdash,
+.charts-rowuserdash {
+  margin-top: 20px;
+}
+
+/* Charts Row */
+.charts-rowuserdash {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.charts-rowuserdash .recharts-wrapper {
+  margin: 0 auto;
+}
+
+/* StatCard title (Optional styling if StatCard allows title prop) */
+.stat-carduserdash h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .stats-rowuserdash, .charts-rowuserdash {
+    flex-direction: column;
+  }
+  
+  .charts-rowuserdash > div {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+}
+
+/* Tooltip */
+.sidebaruser.smalldash ul li a::after {
+  content: attr(data-tooltip); /* show tooltip text */
+  position: absolute;
+  left: 60px; /* adjust according to sidebar width */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, left 0.3s ease;
+  z-index: 100;
+  font-size: 0.85rem;
+}
+
+/* Show tooltip on hover */
+.sidebaruser.smalldash ul li a:hover::after {
+  opacity: 1;
+  left: 70px; /* slightly slide out */
+}

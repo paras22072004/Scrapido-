@@ -1,0 +1,82 @@
+/* Container */
+.form-containersign {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Heading */
+.form-containersign h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Groups */
+.form-containersign form div {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.form-containersign label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Inputs & Select */
+.form-containersign input,
+.form-containersign select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-containersign input:focus,
+.form-containersign select:focus {
+  border-color: #007BFF;
+}
+
+/* Button */
+.form-containersign button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-containersign button:hover {
+  background-color: #0056b3;
+}
+
+/* Message */
+.form-containersign p {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 500;
+  color: green;
+}
+
+/* Responsive for small screens */
+@media (max-width: 480px) {
+  .form-containersign {
+    margin: 20px;
+    padding: 20px;
+  }
+}

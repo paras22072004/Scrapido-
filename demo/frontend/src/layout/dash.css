@@ -1,0 +1,54 @@
+/* src/components/Sidebar.css */
+.sidebar-new {
+  width: 80px;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  transition: width 0.3s ease;
+}
+.sidebar-new:hover {
+  width: 240px;
+}
+.sidebar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 40px;
+}
+.sidebar-nav {
+  list-style: none;
+  width: 100%;
+}
+.nav-item {
+  width: 100%;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: #ccc;
+  padding: 15px 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.nav-link svg {
+  font-size: 1.5rem;
+  min-width: 30px;
+  transition: all 0.3s ease;
+}
+.link-text {
+  margin-left: 20px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.sidebar-new:hover .link-text {
+  opacity: 1;
+}
+.nav-link:hover, .nav-link.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+}

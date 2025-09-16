@@ -1,0 +1,122 @@
+/* Navbar container */
+.navbarnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white; /* dark eco green */
+  padding: 12px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 50px;
+  box-shadow: 0px 8px 10px -4px #408562;
+}
+
+/* Logo text */
+.logovnav {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating Waste Icons */
+.logo-animationanv {
+  position: absolute;
+  left: 30px; /* beside logo */
+  display: flex;
+  gap: 8px;
+}
+
+.logo-animationanv span {
+  font-size: 1.3rem;
+  animation: floatWaste 3s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+/* Different delays for each icon */
+.logo-animationanv span:nth-child(1) { animation-delay: 0s; }
+.logo-animationanv span:nth-child(2) { animation-delay: 0.6s; }
+.logo-animationanv span:nth-child(3) { animation-delay: 1.2s; }
+.logo-animationanv span:nth-child(4) { animation-delay: 1.8s; }
+
+@keyframes floatWaste {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Navigation Links */
+.nav-linksnav {
+  display: flex;
+  gap: 20px;
+  font-weight: 800;
+}
+
+.nav-linksnav a {
+  color: black;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-linksnav a:hover {
+  color: red; /* light eco lime */
+}
+
+/* Hamburger Menu */
+.menu-iconhomenav {
+  display: none;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+  transition: 0.4s;
+}
+
+/* Animation when menu opens */
+.change.bar1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.change.bar2 {
+  opacity: 0;
+}
+.change.bar3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .logo-animationanv {
+    display: none; /* hide floating icons on mobile */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #2d6a4f;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-iconhomenav {
+    display: block;
+  }
+}

@@ -1,0 +1,395 @@
+/* 📂 src/pages/SellScrap.css */
+
+/* --- Layout --- */
+.dashboard-containersellhome {
+  display: flex;
+  min-height: 100vh;
+  background: #f7f9fb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.lhome ul li {
+  margin: 20px 0;
+}
+
+/* .smalldashsellhome ul li a {
+  color: #d1d5db;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+smalldashsellhome {
+  width: 70px;
+  background: #1f2937;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.smalldashsellhome ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.smalldashsel
+.smalldashsellhome ul li a:hover {
+  color: #10b981;
+  transform: scale(1.2);
+}
+*/
+.main-contentsellhome {
+  flex: 1;
+  padding-left: 80px;
+  padding-top: 20px;
+}
+
+.main-contentsellhome h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #111827;
+} 
+
+/* --- Stepper --- */
+.process-stepperhome {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.process-stepperhome h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #374151;
+}
+
+.stepper-containerhome {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stephome {
+  flex: 1;
+  min-width: 150px;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.stephome:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.step-numberhome {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  background: #10b981;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.step-texthome {
+  font-size: 14px;
+  color: #374151;
+}
+
+/* --- Form + AI Helper --- */
+.scrap-form-with-helperhome {
+  display: flex;
+  gap: 25px;
+}
+
+.scrap-formhome {
+  flex: 2;
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.scrap-formhome h3 {
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.scrap-formhome form label {
+  display: block;
+  margin: 12px 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.scrap-formhome form input,
+.scrap-formhome form select,
+.scrap-formhome form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.scrap-formhome form input:focus,
+.scrap-formhome form select:focus,
+.scrap-formhome form textarea:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16,185,129,0.2);
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #10b981;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #059669;
+}
+
+.btn-secondary {
+  background: #3b82f6;
+  color: white;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background: #2563eb;
+}
+
+/* --- AI Output --- */
+.ai-output-containerhome {
+  margin-top: 20px;
+  padding: 15px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 10px;
+}
+
+.ai-output-containerhome h4 {
+  margin-bottom: 10px;
+  color: #065f46;
+}
+
+.errorhome {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* --- AI Helper --- */
+.ai-helper-panelhome {
+  flex: 1;
+  background: #f9fafb;
+  border-left: 3px solid #10b981;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.05);
+}
+
+.ai-helper-panelhome h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  color: #065f46;
+  margin-bottom: 15px;
+}
+
+.ai-helper-panelhome ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ai-helper-panelhome ul li {
+  margin-bottom: 12px;
+  padding-left: 10px;
+  position: relative;
+  font-size: 14px;
+  color: #374151;
+}
+
+.ai-helper-panelhome ul li::before {
+  content: "✔";
+  position: absolute;
+  left: -15px;
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* --- Category Cards --- */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+  gap: 20px;
+}
+
+.category-card-sell {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.category-card-sell:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.category-icon {
+  font-size: 32px;
+  color: #10b981;
+  margin-bottom: 10px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .scrap-form-with-helperhome {
+    flex-direction: column;
+  }
+
+  .ai-helper-panelhome {
+    border-left: none;
+    border-top: 3px solid #10b981;
+  }
+}
+
+
+
+/* Sidebar */
+.smalldashsell {
+  width: 70px;
+  background: #1f2937;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.smalldashsell ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.smalldashsell ul li {
+  margin: 20px 0;
+  position: relative;
+}
+
+
+
+/* Sidebar */
+.smalldashsellhome {
+  width: 50px;
+  background: white; /* dark gray */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  min-height: 100vh;
+  position: fixed;
+  overflow: visible;
+   z-index: 1000;
+
+}
+
+.smalldashsellhome ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+.smalldashsellhome ul li {
+  margin: 20px 0;
+  position: relative;
+}
+
+/* Icon links */
+.smalldashsellhome ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  position: relative;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.smalldashsellhome ul li a:hover {
+  background: #1f2937;
+  color: #10b981; /* green highlight */
+}
+
+/* Tooltip bubble */
+.smalldashsellhome ul li a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 40px; /* position outside sidebar */
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  background: #1f2937;
+  color: #f9fafb;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  
+}
+
+/* Tooltip arrow */
+.smalldashsellhome ul li a::before {
+  content: "";
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #1f2937 transparent transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show tooltip on hover */
+.smalldashsellhome ul li a:hover::after,
+.smalldashsellhome ul li a:hover::before {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
