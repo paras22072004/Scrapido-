@@ -18,5 +18,10 @@ app.use("/api/auth", authRoutes);
 // Routes
 app.use("/api/ai", aiRoutes);
 
+// ✅ Default route (root path)
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
