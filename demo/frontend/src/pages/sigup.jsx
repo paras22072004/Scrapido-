@@ -13,7 +13,7 @@ const SignupForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:4000/api/auth/signup', formData);
+      const res = await axios.post('https://scrapido-demo-server.onrender.com', formData);
       setMessage(res.data.message);
 
       if (res.status === 201) {

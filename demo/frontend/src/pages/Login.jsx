@@ -16,7 +16,7 @@ const LoginPage = () => {
 
     try {
       // Call the backend login API
-      const res = await axios.post('http://localhost:4000/api/auth/login', { email, password });
+      const res = await axios.post('https://scrapido-demo-server.onrender.com', { email, password });
 
       console.log(res.data); // You can check the response from backend
       setMessage(res.data.message || 'Login successful!');

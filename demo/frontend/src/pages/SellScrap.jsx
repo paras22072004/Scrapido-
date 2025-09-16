@@ -90,7 +90,7 @@ const ScrapDetailsForm = ({ category, onBack }) => {
     formData.append('description', description);
 
     try {
-      const res = await fetch("http://localhost:4000/api/ai/analyze-comprehensive", {
+      const res = await fetch("https://scrapido-demo-server.onrender.com", {
         method: "POST",
         body: formData,
       });
@@ -113,7 +113,7 @@ const ScrapDetailsForm = ({ category, onBack }) => {
     }
 
     try {
-      const res = await fetch("http://localhost:4000/api/pickup/request", {
+      const res = await fetch("https://scrapido-demo-server.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
