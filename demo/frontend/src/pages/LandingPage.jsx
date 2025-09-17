@@ -127,7 +127,7 @@ const LandingPage = () => {
     },
     {
       name: "Pouches & Purses",
-      img: "public/purse.png",
+      img: "/purse.png",
     },
     {
       name: "Office & School",
@@ -135,7 +135,7 @@ const LandingPage = () => {
     },
     {
       name: "Lifestyle Essentials",
-      img: "public/home.png",
+      img: "/home.png",
     },
     {
       name: "Gift Vouchers",
