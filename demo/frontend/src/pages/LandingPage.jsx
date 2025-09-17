@@ -127,7 +127,7 @@ const LandingPage = () => {
     },
     {
       name: "Pouches & Purses",
-      img: "https://via.placeholder.com/200x200.png?text=Purses",
+      img: "public/purse.png",
     },
     {
       name: "Office & School",
@@ -135,7 +135,7 @@ const LandingPage = () => {
     },
     {
       name: "Lifestyle Essentials",
-      img: "https://via.placeholder.com/200x200.png?text=Essentials",
+      img: "public/home.png",
     },
     {
       name: "Gift Vouchers",
