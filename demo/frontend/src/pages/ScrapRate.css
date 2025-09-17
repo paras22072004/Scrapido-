@@ -1,139 +1,119 @@
-/* Container */
-.rate-containerrate {
-  padding: 25px;
-  font-family: 'Arial', sans-serif;
-  background: #f8f9fa;
-  min-height: 100vh;
+/* Overall page container */
+.rate-page-containerrate {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Header section */
+.rate-headerrate {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-/* Title & subtitle */
-.rate-titlerate {
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #222;
+.rate-headerrate h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
 }
 
-.rate-subtitlerate {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 30px;
+.rate-headerrate p {
+  color: #666;
+  font-size: 1rem;
 }
 
-/* Flex container: side by side layout */
-.rate-flex-containerrate {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  align-items: flex-start;
+/* Grid layout for cards */
+.rate-gridrate {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
-/* Pie chart box */
-.chart-boxraterate {
-  flex: 1 1 350px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+/* Card styling */
+.rate-category-cardrs {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
   transition: transform 0.2s ease;
 }
 
-.chart-boxraterate:hover {
-  transform: translateY(-3px);
+.rate-category-cardrs:hover {
+  transform: translateY(-5px);
 }
 
-/* Rate list box */
-.rate-list-boxrate {
-  flex: 1 1 350px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-  text-align: center;
+/* Card header */
+.card-headerrs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.card-iconrs {
+  font-size: 1.8rem;
+  color: #007bff;
+  margin-right: 0.75rem;
+}
+
+.card-titlers {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Card body - list of items */
+.card-bodyrs {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Cards on top, button at bottom */
-  height: 550px;
+  gap: 0.75rem;
 }
 
-/* Subheading */
-.rate-subheadingrate {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 20px;
+/* Each item in the card */
+.rate-itemrs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.item-detailsrs {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-namers {
+  font-weight: 500;
   color: #333;
 }
 
-/* Grid for rate cards */
-.rate-gridrate {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  overflow-y: auto; /* Scroll if too many items */
-  padding-right: 5px;
-  margin-bottom: 20px;
+.item-noters {
+  font-size: 0.8rem;
+  color: #999;
 }
 
-/* Individual rate card */
-.rate-cardrate {
-  background: #fefefe;
-  padding: 12px 15px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.item-raters {
+  font-weight: 600;
+  color: #007bff;
 }
 
-.rate-cardrate:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-}
-
-/* Rate card text */
-.rate-cardrate h3 {
-  font-size: 16px;
-  margin-bottom: 4px;
-  color: #444;
-}
-
-.rate-cardrate p {
-  font-size: 15px;
-  font-weight: bold;
-  color: #e76f51; 
-}
-
-/* Sell button */
-.sell-btnrate {
+/* Button at the bottom */
+.btn.btn-primary {
   display: inline-block;
-  background: #2a9d8f;
+  padding: 0.75rem 1.5rem;
   color: #fff;
-  padding: 12px 28px;
-  border-radius: 10px;
+  background-color: #007bff;
   text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  align-self: center; /* Center horizontally in flex column */
-  margin-top: 10px;  /* space from cards */
+  font-weight: 600;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
-.sell-btnrate:hover {
-  background: #21867a;
-  transform: translateY(-2px);
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .rate-flex-containerrate {
-    flex-direction: column;
-    align-items: center;
-  }
-  .chart-boxraterate, .rate-list-boxrate {
-    flex: 1 1 100%;
-    height: auto;
-  }
-  .rate-gridrate {
-    height: auto;
-  }
+.btn.btn-primary:hover {
+  background-color: #0056b3;
 }
