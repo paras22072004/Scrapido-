@@ -35,7 +35,7 @@ const Navbar = () => {
           ScrapRate
         </Link>
         <Link to="/marketplace" onClick={() => setMenuOpen(false)}>
-          Eco Bazzar
+          EcoBazzar
         </Link>
       </div>
     </nav>

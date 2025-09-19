@@ -354,7 +354,7 @@ const LandingPage = () => {
 
         {/* Categories */}
         <section className="categories-sectionhome">
-          <h2>Eco Bazaar</h2>
+          <h2>EcoBazaar</h2>
           <div className="categories-gridhome">
             {categories.map((category, index) => (
               <Link to="/marketplace" key={index} className="category-cardhome">

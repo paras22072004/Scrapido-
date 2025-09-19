@@ -26,7 +26,7 @@ const Marketplace = () => {
     <>
       <Navbar />
       <div className="containereco">
-        <h1>Upcycled Eco Bazaar</h1>
+        <h1>Upcycled EcoBazaar</h1>
         <div className="stat-cardeco"> {/* Search and Filter */}
             <input type="search" placeholder="Search for products..." style={{ width: '100%', boxSizing: 'border-box' }}/>
         </div>
