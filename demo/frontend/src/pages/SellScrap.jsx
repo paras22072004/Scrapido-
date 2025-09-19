@@ -167,7 +167,7 @@ const ScrapDetailsForm = ({ category, onBack }) => {
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
 
-          <label>4. Upload an image for verification:</label>
+          <label>4. Upload an image for verification(otional)</label>
           <input
             type="file"
             accept="image/*"

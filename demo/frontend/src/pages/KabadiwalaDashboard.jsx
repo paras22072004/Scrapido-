@@ -3,49 +3,38 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaTruck, FaMoneyBillWave, FaChartLine, FaSignOutAlt, FaEye, FaCheckCircle, FaRupeeSign, FaWeightHanging, FaStar, FaTimes } from 'react-icons/fa';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import "leaflet/dist/leaflet.css";
-import "./KabadiwalaDashboard.css"; // We will create this new CSS file
+import "./KabadiwalaDashboard.css"; // Keep your CSS
 
 const dummyPickups = [
   {
     id: 1024,
-    lat: 28.5672,
-    lng: 77.2100,
     address: "123, Green Park, Delhi",
     type: "Plastic Bottles",
     aiEstimate: [80, 120],
     weight: 5,
     condition: "Good",
     status: "Pending",
-    image: "/frontend/public/bottles.jpg", // Using a placeholder image URL
-    priceHistory: [70, 85, 95]
+    image: "/frontend/public/bottles.jpg",
   },
   {
     id: 1025,
-    lat: 28.5205,
-    lng: 77.1500,
     address: "456, Vasant Kunj, Delhi",
     type: "Old Clothes",
     aiEstimate: [150, 200],
     weight: 10,
     condition: "Mixed",
     status: "Accepted",
-    image: "/frontend/public/clothes.jpeg", // Using a placeholder image URL
-    priceHistory: [140, 160, 180]
+    image: "/frontend/public/clothes.jpeg",
   },
   {
     id: 1026,
-    lat: 28.6139,
-    lng: 77.2090,
     address: "789, Connaught Place, Delhi",
     type: "Newspaper",
     aiEstimate: [50, 70],
     weight: 8,
     condition: "Excellent",
     status: "Pending",
-    image: "", // Using a placeholder image URL
-    priceHistory: [45, 55, 65]
+    image: "",
   }
 ];
 
@@ -61,8 +50,7 @@ const Modal = ({ children, onClose }) => (
   </div>
 );
 
-
-// --- Refactored PickupRow ---
+// --- Pickup Row ---
 const PickupRow = ({ pickup, onAcceptClick, onViewImageClick }) => (
   <tr>
     <td>{pickup.address}</td>
@@ -93,24 +81,20 @@ const KabadiwalaDashboard = () => {
   const [isAcceptModalOpen, setAcceptModalOpen] = useState(false);
   const [notification, setNotification] = useState('');
 
-  // Form state for the acceptance modal
+  // Form state
   const [finalWeight, setFinalWeight] = useState(0);
   const [finalPrice, setFinalPrice] = useState(0);
   const [pickupTime, setPickupTime] = useState("");
 
   useEffect(() => setPickups(dummyPickups), []);
 
-  // Effect to handle notification auto-hide
   useEffect(() => {
     if (notification) {
-      const timer = setTimeout(() => {
-        setNotification('');
-      }, 3000); // Hide after 3 seconds
+      const timer = setTimeout(() => setNotification(''), 3000);
       return () => clearTimeout(timer);
     }
   }, [notification]);
 
-  // Dynamic price estimate calculation in modal
   useEffect(() => {
     if (selectedPickup) {
       const avgBase = (selectedPickup.aiEstimate[0] + selectedPickup.aiEstimate[1]) / 2;
@@ -119,10 +103,6 @@ const KabadiwalaDashboard = () => {
     }
   }, [finalWeight, selectedPickup]);
 
-  const showNotification = (message) => {
-    setNotification(message);
-  };
-
   const handleViewImageClick = (pickup) => {
     setSelectedPickup(pickup);
     setImageModalOpen(true);
@@ -130,7 +110,7 @@ const KabadiwalaDashboard = () => {
 
   const handleAcceptClick = (pickup) => {
     setSelectedPickup(pickup);
-    setFinalWeight(pickup.weight); // Pre-fill with original weight
+    setFinalWeight(pickup.weight);
     setAcceptModalOpen(true);
   };
 
@@ -138,7 +118,6 @@ const KabadiwalaDashboard = () => {
     setSelectedPickup(null);
     setImageModalOpen(false);
     setAcceptModalOpen(false);
-    // Reset form fields
     setPickupTime("");
   };
 
@@ -148,7 +127,7 @@ const KabadiwalaDashboard = () => {
       p.id === selectedPickup.id ? { ...p, status: "Accepted" } : p
     );
     setPickups(updated);
-    showNotification(`Pickup #${selectedPickup.id} has been accepted!`);
+    setNotification(`Pickup #${selectedPickup.id} has been accepted!`);
     closeModal();
   };
 
@@ -157,12 +136,11 @@ const KabadiwalaDashboard = () => {
   return (
     <div className="dashboard-containerbuddykd">
       <aside className="sidebarbuddy">
-        {/* Sidebar remains unchanged as requested */}
         <ul>
-          <li><Link to="#" data-tooltip="Assigned Pickups"><FaTruck /></Link></li>
-          <li><Link to="#" data-tooltip="Enter Final Price"><FaMoneyBillWave /></Link></li>
-          <li><Link to="#" data-tooltip="Earnings"><FaChartLine /></Link></li>
-          <li><Link to="/" data-tooltip="Logout"><FaSignOutAlt /></Link></li>
+          <li><Link to="#"><FaTruck /></Link></li>
+          <li><Link to="#"><FaMoneyBillWave /></Link></li>
+          <li><Link to="#"><FaChartLine /></Link></li>
+          <li><Link to="/"><FaSignOutAlt /></Link></li>
         </ul>
       </aside>
 
@@ -171,7 +149,7 @@ const KabadiwalaDashboard = () => {
 
         <h1>Scrap Buddy Dashboard</h1>
 
-        {/* --- Modern Stats Grid --- */}
+        {/* Stats */}
         <div className="stats-grid-kd">
           <div className="stat-card-small-kd">
             <FaTruck className="stat-icon-kd" style={{ color: '#3498db' }} />
@@ -231,25 +209,28 @@ const KabadiwalaDashboard = () => {
               </div>
             </div>
           </div>
+
+          {/* ✅ Simple Google Maps iframe instead of react-leaflet */}
           <div className="side-panel-kd">
             <div className="stat-card-buddykd">
               <h3>Pickup Locations</h3>
-              <MapContainer center={[28.58, 77.20]} zoom={11} style={{ height: "100%", width: "100%", borderRadius: '8px', minHeight: '400px' }}>
-                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                {pickups.map(pickup => (
-                  <Marker key={pickup.id} position={[pickup.lat, pickup.lng]}>
-                    <Popup>
-                      <strong>{pickup.address}</strong> <br /> {pickup.type}
-                    </Popup>
-                  </Marker>
-                ))}
-              </MapContainer>
+              <div style={{ height: "400px", width: "100%", borderRadius: "8px", overflow: "hidden" }}>
+                <iframe
+                  title="simple-map"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.00559336482!2d77.2090!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd35aef4c3e9%3A0x4a3f4b3a6f3e4b5f!2sConnaught%20Place%2C%20New%20Delhi!5e0!3m2!1sen!2sin!4v1633951934659!5m2!1sen!2sin"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
       </main>
 
-      {/* --- Modals --- */}
+      {/* Modals */}
       {isImageModalOpen && selectedPickup && (
         <Modal onClose={closeModal}>
           <h2>Image for Pickup #{selectedPickup.id}</h2>
