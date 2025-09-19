@@ -55,7 +55,7 @@
 }
 
 /* Tooltip on hover */
-.sidebarartisan a[data-tooltip]::after {
+/* .sidebarartisan a[data-tooltip]::after {
   content: attr(data-tooltip);
   position: absolute;
   left: 70px;
@@ -93,7 +93,7 @@
 
 .sidebarartisan a:hover::before {
   opacity: 1;
-}
+} */
 
 /* ---------------- Main Content ---------------- */
 .main-contentartisan {
