@@ -365,13 +365,13 @@
 }
 
 /* ---------------- Tooltip ---------------- */
-.sidebarbuddy a[data-tooltip]::after {
+/* .sidebarbuddy a[data-tooltip]::after {
   content: attr(data-tooltip);
   position: absolute;
-  left: 70px; /* position right of sidebar */
+  left: 70px; 
   top: 50%;
   transform: translateY(-50%) translateX(10px);
-  background: #111827;
+  
   color: #fff;
   font-size: 12px;
   padding: 6px 10px;
@@ -382,15 +382,15 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   z-index: 10;
-}
+} */
 
-.sidebarbuddy a:hover::after {
+/* .sidebarbuddy a:hover::after {
   opacity: 1;
   transform: translateY(-50%) translateX(0);
-}
+} */
 
 /* Optional: small arrow for tooltip */
-.sidebarbuddy a[data-tooltip]::before {
+/* .sidebarbuddy a[data-tooltip]::before {
   content: "";
   position: absolute;
   left: 62px;
@@ -404,4 +404,4 @@
 
 .sidebarbuddy a:hover::before {
   opacity: 1;
-}
+} */

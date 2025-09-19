@@ -125,18 +125,12 @@ const LandingPage = () => {
       name: "Home Decor",
       img: "https://cdn.moolwan.com/374445b4-2197-43c6-a0b3-6bc588b62774.jpg",
     },
-    {
-      name: "Pouches & Purses",
-      img: "public/purse.png",
-    },
+
     {
       name: "Office & School",
       img: "https://scrapshala.com/cdn/shop/files/GEET_large_68302558-c2e7-4c63-9186-c71bbc57547a.webp?v=1745327971&width=300",
     },
-    {
-      name: "Lifestyle Essentials",
-      img: "public/home.png",
-    },
+    
     {
       name: "Gift Vouchers",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9RjKhnZl1y0Wkk9cAGAPvZ87KozAYxl8BUw&s",
@@ -215,7 +209,7 @@ const LandingPage = () => {
                 title="I'm an Artisan"
                 aria-label="Artisan"
               >
-                <img src={hero9} alt="Artisan" className="role-image" />
+                <img src={hero8} alt="Artisan" className="role-image" />
                 <div className="role-image-overlay">
                   <FaPaintBrush className="role-image-icon" aria-hidden />
                   <span className="role-image-label">Artisan</span>
@@ -228,7 +222,7 @@ const LandingPage = () => {
                 title="I'm a Scrap Buddy"
                 aria-label="Scrap Buddy"
               >
-                <img src={hero8} alt="Scrap Buddy" className="role-image" />
+                <img src={hero9} alt="Scrap Buddy" className="role-image" />
                 <div className="role-image-overlay">
                   <FaRecycle className="role-image-icon" aria-hidden />
                   <span className="role-image-label">Scrap Buddy</span>

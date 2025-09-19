@@ -45,7 +45,7 @@ const SignupForm = () => {
           <label>Role:</label>
           <select name="role" value={formData.role} onChange={handleChange}>
             <option value="user">User</option>
-            <option value="kabadiwala">Kabadiwala</option>
+            <option value="kabadiwala">ScrapBuddy</option>
             <option value="artisan">Artisan</option>
           </select>
         </div>

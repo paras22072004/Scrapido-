@@ -28,7 +28,7 @@ const ProcessStepper = () => {
   ];
   return (
     <div className="process-stepperhome">
-      <h2>Kaise Kaam Karta Hai?</h2>
+      <h2>Step by Step Guide</h2>
       <div className="stepper-containerhome">
         {steps.map((step, index) => (
           <div key={index} className="stephome">
