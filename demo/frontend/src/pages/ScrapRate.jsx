@@ -88,7 +88,7 @@ const ScrapRate = () => {
       <Navbar />
       <div className="rate-page-containerrate">
         <div className="rate-headerrate">
-          <h1>Today's Live Scrap Rates</h1>
+          <h1>Today's Scrap Rates</h1>
           <p>Rates may vary based on material quality and location.</p>
         </div>
         
