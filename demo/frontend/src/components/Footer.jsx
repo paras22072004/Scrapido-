@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Quick Links</h4>
           <ul>
-            <li><Link to="/marketplace">Marketplace</Link></li>
+            <li><Link to="/marketplace">EcoBazaar</Link></li>
             <li><Link to="/ScrapRate">ScrapRate</Link></li>
             <li><Link to="#">About Us</Link></li>
           </ul>
@@ -49,7 +49,7 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <div className="cont">
-          <p>&copy; {new Date().getFullYear()} Scrap2Value. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Scrapido. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
