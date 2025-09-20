@@ -439,39 +439,254 @@ nav {
 .story-name-v2 { margin-top: 12px; font-size: 1.1rem; font-weight: 600; color: var(--primary-dark); }
 
 /* --------------- IMPACT SECTION --------------- */
+/* === Section Container === */
 .impact-v2-sectionhome {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 2rem;
-  padding: 4rem 2rem;
+  justify-content: space-between;
+  padding: 80px 60px;
+  background: linear-gradient(to right, #eafbea, #ffffff);
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
 }
+
+/* === Left Content === */
 .impact-v2-contenthome {
-  flex: 1;
+  flex: 1 1 55%;
+  padding: 20px;
 }
-.impact-v2-imagehome {
-  flex: 1;
+
+/* === Heading === */
+.impact-v2-titlehome {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0e4d2d;
+  margin-bottom: 20px;
 }
-.impact-v2-imagehome img {
-  width: 100%;
-  border-radius: 12px;
+
+/* === Description === */
+.impact-v2-descriptionhome {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 40px;
 }
+
+/* === Stats Wrapper === */
 .impact-v2-statshome {
   display: flex;
-  gap: 2rem;
-  margin: 2rem 0;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
 }
+
+/* === Individual Stat Card === */
+.impact-v2-stat-itemhome {
+  flex: 1 1 160px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.impact-v2-stat-itemhome:hover {
+  transform: translateY(-6px);
+}
+
 .impact-v2-stat-itemhome h3 {
-  color: var(--accent-color, #28a745);
+  font-size: 2rem;
+  color: #1a8f5b;
+  margin-bottom: 10px;
 }
+
+.impact-v2-stat-itemhome p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* === CTA Button === */
+.btn-primaryhome {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #1a8f5b;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primaryhome:hover {
+  background-color: #146c43;
+}
+
+/* === Right Image === */
+.impact-v2-imagehome {
+  flex: 1 1 40%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.impact-v2-imagehome img {
+  max-width: 100%;
+  height: auto;
+  min-height: 350px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .impact-v2-sectionhome {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .impact-v2-contenthome,
+  .impact-v2-imagehome {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .impact-v2-titlehome {
+    font-size: 2.2rem;
+  }
+
+  .impact-v2-statshome {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
 /* --------------- WHY CHOOSE US --------------- */
-.why-choose-sectionhome { padding: 70px 20px; text-align: center; }
-.why-choose-sectionhome h2 { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 45px; }
-.why-card { background: #F5FFF7; padding: 35px 25px; border-radius: 20px; box-shadow: var(--shadow-1); transition: all 0.3s ease; }
-.why-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-2); }
-.why-card .icon { font-size: 2.8rem; color: var(--primary-dark); margin-bottom: 18px; }
-.why-card h3 { font-size: 1.4rem; margin-bottom: 12px; color: var(--primary-dark); }
-.why-card p { font-size: 1rem; color: var(--text-muted); }
+/* === Section Wrapper === */
+.why-choose-sectionhome {
+  padding: 80px 40px;
+  background-color: #ffffff;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* === Section Title === */
+.why-choose-sectionhome h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0e4d2d;
+  margin-bottom: 50px;
+}
+
+/* === Slider Wrapper === */
+.why-sliderhome {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* === Individual Card === */
+.why-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 40px 30px;
+  margin: 0 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* === Icon Area === */
+.why-card .icon {
+  font-size: 3rem;
+  color: #1a8f5b;
+  margin-bottom: 20px;
+}
+
+/* === Card Title === */
+.why-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+/* === Card Text === */
+.why-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+/* === Slider Dots Customization === */
+.slick-dots {
+  bottom: -35px;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  color: #1a8f5b;
+  opacity: 0.6;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #0e4d2d;
+}
+
+/* === Arrows Customization (Optional) === */
+.slick-prev,
+.slick-next {
+  z-index: 2;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 24px;
+  color: #1a8f5b;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .why-choose-sectionhome {
+    padding: 60px 20px;
+  }
+
+  .why-choose-sectionhome h2 {
+    font-size: 2.2rem;
+  }
+
+  .why-card {
+    padding: 30px 20px;
+  }
+
+  .why-card .icon {
+    font-size: 2.5rem;
+  }
+
+  .why-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .why-card p {
+    font-size: 0.95rem;
+  }
+}
+
 
 /* --------------- RESPONSIVE --------------- */
 @media (max-width: 1024px) {
